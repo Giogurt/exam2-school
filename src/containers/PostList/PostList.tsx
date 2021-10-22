@@ -14,11 +14,19 @@ interface ListProps {
   userHelper: UserListHelper;
 }
 
+/**
+ * Post List Container
+ * @extends {Component<Props, State>}
+ */
 class PostList extends Component<ListProps, ListState> {
   state = {
     posts: [] as Post[],
   };
 
+  /**
+   * Renders the container.
+   * @return {string} - HTML markup for the container
+   */
   render() {
     let postList: any[] = [];
     this.state.posts.forEach((post) => {
@@ -37,6 +45,9 @@ class PostList extends Component<ListProps, ListState> {
     return postList;
   }
 
+  /**
+   * The logic that runs when the container is mounted
+   */
   componentDidMount() {
     PostService.getAllPosts().then((response) => {
       const posts = response.data as Post[];

@@ -20,6 +20,12 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+/**
+ * User Detail elements
+ * @param props open status, a function to close the modal, the user
+ * @returns UserDetails UI elements
+ */
 const UserDetails: React.FC<UserDetailsProps> = (props) => {
   let userName = "";
   if (props.user !== undefined && props.user.username !== undefined) {

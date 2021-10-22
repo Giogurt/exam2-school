@@ -10,6 +10,11 @@ interface PostInfoProps {
   openDetails(event: any, authorId: number): void;
 }
 
+/**
+ * Post Information elements
+ * @param props receives a post, the user that made that post and a function to open the modal
+ * @returns PostInfo UI elements
+ */
 const PostInfo: React.FC<PostInfoProps> = (props) => {
   let postTitle = "";
   if (props.post !== undefined && props.post.title !== undefined) {
