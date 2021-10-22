@@ -11,7 +11,6 @@ interface ListState {
 
 interface ListProps {
   openDetails(event: any, authorId: number): void;
-  users: User[];
   userHelper: UserListHelper;
 }
 
@@ -23,7 +22,10 @@ class PostList extends Component<ListProps, ListState> {
   render() {
     let postList: any[] = [];
     this.state.posts.forEach((post) => {
-      const user = this.props.userHelper.getUser(post.userId)
+      let user= {} as User;
+      if (this.props.userHelper !== undefined && this.props.userHelper.getUser !== undefined) {
+        user = this.props.userHelper.getUser(post.userId)
+      }
       postList.push(
         <PostInfo
           post={post}

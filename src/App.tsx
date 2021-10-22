@@ -25,7 +25,10 @@ class App extends React.Component<{}, AppState> {
     return (
       <Fragment>
         <CssBaseline />
-        <PostList openDetails={this.handleOpenDetails} userHelper={this.state.userHelper} users={this.state.users} />
+        <PostList
+          openDetails={this.handleOpenDetails}
+          userHelper={this.state.userHelper}
+        />
         <UserModal
           isDetailsVisible={this.state.detailsOpen}
           closeUserDetails={this.handleCloseDetails}

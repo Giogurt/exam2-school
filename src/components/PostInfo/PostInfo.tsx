@@ -26,6 +26,11 @@ const PostInfo: React.FC<PostInfoProps> = (props) => {
     authorPhoto = `https://picsum.photos/100?${props.post.userId}`;
   }
 
+  let authorUsername = "";
+  if (props.user !== undefined && props.user.username !== undefined) {
+    authorUsername = props.user.username;
+  }
+
   return (
     <Grid container className="postGrid" spacing={2}>
       <Grid className="avatarGrid" item md={1} container>
@@ -49,7 +54,7 @@ const PostInfo: React.FC<PostInfoProps> = (props) => {
             variant="text"
             onClick={(e) => props.openDetails(e, props.post.userId)}
           >
-            <Typography className="postAuthor">{props.user.username}</Typography>
+            <Typography className="postAuthor">{authorUsername}</Typography>
           </Button>
         </Grid>
       </Grid>
