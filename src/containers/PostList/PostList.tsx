@@ -1,19 +1,38 @@
 import React, { Component } from "react";
 import PostInfo from "../../components/PostInfo/PostInfo";
 import PostService from "../../services/PostService";
+import UserListHelper from "../../tools/UserListHelper";
 import Post from "../../types/Post";
+import User from "../../types/User";
 
 interface ListState {
   posts: Post[];
 }
 
-class PostList extends Component<{}, ListState> {
+interface ListProps {
+  openDetails(event: any, authorId: number): void;
+  users: User[];
+  userHelper: UserListHelper;
+}
+
+class PostList extends Component<ListProps, ListState> {
   state = {
     posts: [] as Post[],
   };
 
   render() {
-    return <PostInfo />;
+    let postList: any[] = [];
+    this.state.posts.forEach((post) => {
+      const user = this.props.userHelper.getUser(post.userId)
+      postList.push(
+        <PostInfo
+          post={post}
+          user={user}
+          openDetails={this.props.openDetails}
+        />
+      );
+    });
+    return postList;
   }
 
   componentDidMount() {

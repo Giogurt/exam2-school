@@ -5,6 +5,10 @@ class PostService {
     return PostAPI.get("/posts");
   }
 
+  getAllUsers() {
+    return PostAPI.get("/users/");
+  } 
+
   getUser(id: number) {
     return PostAPI.get(`/users/${id}`);
   } 

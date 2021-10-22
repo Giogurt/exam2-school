@@ -1,0 +1,8 @@
+img.largeImage {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+div.largeImage {
+  box-shadow: none;
+}

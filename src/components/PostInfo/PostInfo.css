@@ -1,0 +1,14 @@
+.postGrid {
+  margin: 10px;
+  padding: 10px;
+}
+
+.avatarGrid {
+  justify-content: center;
+  align-items: center;
+}
+
+.authorAvatar {
+  height: 100px;
+  width: 100px;
+}
