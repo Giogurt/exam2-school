@@ -1,5 +1,5 @@
 import "./UserDetails.css";
-import { Box, Button, Grid, Modal, Paper } from "@material-ui/core";
+import { Box, Button, Grid, Modal, Paper, Typography } from "@material-ui/core";
 import React from "react";
 import User from "../../types/User";
 
@@ -14,7 +14,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 900,
+  width: 700,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -60,7 +60,11 @@ const UserDetails: React.FC<UserDetailsProps> = (props) => {
   }
 
   return (
-    <Modal open={props.open} onClose={props.handleClose}>
+    <Modal
+      className="detailsModal"
+      open={props.open}
+      onClose={props.handleClose}
+    >
       <Box sx={style}>
         <Grid container className="userGrid" spacing={2}>
           <Grid item md={12} container justifyContent="flex-end">
@@ -74,19 +78,29 @@ const UserDetails: React.FC<UserDetailsProps> = (props) => {
             </Paper>
           </Grid>
           <Grid item md={12}>
-            {`Username: ${userName}`}
+            <Typography className="text" variant="body1">
+              {`Username: ${userName}`}
+            </Typography>
           </Grid>
           <Grid item md={12}>
-            {`Nombre: ${userRealName}`}
+            <Typography className="text" variant="body1">
+              {`Nombre: ${userRealName}`}
+            </Typography>
           </Grid>
           <Grid item md={12}>
-            {`Correo: ${userMail}`}
+            <Typography className="text" variant="body1">
+              {`Correo: ${userMail}`}
+            </Typography>
           </Grid>
           <Grid item md={12}>
-            {`Ciudad: ${userCity}`}
+            <Typography className="text" variant="body1">
+              {`Ciudad: ${userCity}`}
+            </Typography>
           </Grid>
           <Grid item md={12}>
-            {`Compania: ${userCompanyName}`}
+            <Typography className="text" variant="body1">
+              {`Compania: ${userCompanyName}`}
+            </Typography>
           </Grid>
         </Grid>
       </Box>

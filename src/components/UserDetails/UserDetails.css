@@ -6,3 +6,11 @@ img.largeImage {
 div.largeImage {
   box-shadow: none;
 }
+
+.detailsModal {
+  color: antiquewhite;
+}
+
+.text {
+  color: coral;
+}

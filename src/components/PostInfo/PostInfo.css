@@ -12,3 +12,18 @@
   height: 100px;
   width: 100px;
 }
+
+.postTitle {
+  color: cadetblue;
+  font-style: italic;
+}
+
+.postBody {
+  font-style: normal;
+}
+
+.postAuthor {
+  font-style: italic;
+  text-decoration: underline;
+
+}
